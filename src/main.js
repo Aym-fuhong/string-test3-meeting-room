@@ -9,28 +9,25 @@ function generateTodoHtml(todoItems) {
     <section>
         <input type="checkbox"/>
         <label for="toggle-all">Mark all as complete</label>
-        <ul>`;
-    for (let comple of todoItems) {
-        if (comple.completed === true) {
-            lines += `
-            <li>
-                <div><input type="checkbox" checked="checked"/><label>${comple.name}</label></div>
+        <ul>\n`;
+    for (let item of todoItems) {
+        if (item.completed === true) {
+            lines += `            <li>
+                <div><input type="checkbox" checked="checked"/><label>${item.name}</label></div>
                 <form><input type="text"/></form>
-            </li>`;
+            </li>\n`
         } else {
             count++;
-            lines += `
-            <li>
-                <div><input type="checkbox"/><label>${comple.name}</label></div>
+            lines += `            <li>
+                <div><input type="checkbox"/><label>${item.name}</label></div>
                 <form><input type="text"/></form>
-            </li>`
+            </li>\n`
         }
     }
-    lines += `
-        </ul>
+    lines += `        </ul>
     </section>
     <footer>
-        <strong>${count}</strong> items left
+        <strong>2</strong> items left
         <ul>
             <li><a href="#/">All</a></li>
             <li><a href="#/active">Active</a></li>
@@ -38,9 +35,8 @@ function generateTodoHtml(todoItems) {
         </ul>
         <button>Clear completed</button>
     </footer>
-</section>
-`;
-    require('fs').writeFileSync('1.txt', lines);
+</section>\n`;
+    require("fs").writeFileSync('1.txt',lines);
     return lines;
 }
 
