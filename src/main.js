@@ -27,7 +27,7 @@ function generateTodoHtml(todoItems) {
     lines += `        </ul>
     </section>
     <footer>
-        <strong>2</strong> items left
+        <strong>${count}</strong> items left
         <ul>
             <li><a href="#/">All</a></li>
             <li><a href="#/active">Active</a></li>
